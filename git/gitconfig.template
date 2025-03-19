@@ -1,0 +1,21 @@
+# Default configs to be shared among all
+[user]
+    email = {{EMAIL}}
+    name = {{NAME}}
+[core]
+    editor = {{EDITOR}}
+    pager = less -X
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+    # Be able to abort all diffs with `:cq` or `:cquit`
+    trustExitCode = true
+[difftool "vimdiff"]
+    path = {{EDITOR}}
+[commit]
+    template = ~/.config/git/gitcommitmessage
+[pull]
+    rebase = false
+[init]
+    defaultBranch = master
