@@ -8,10 +8,11 @@ default: help
 .PHONY: install
 install:
 	if [ -d .tmux ]; then \
-		ln -sf .tmux $(PATH_TO_USER_HOME)/.tmux
-		ln -sf .tmux.conf.local $(PATH_TO_USER_HOME)/.tmux.conf.local
-	else
-		echo "Please clone down the .tmux submodule"
+		ln -sf $(PWD)/.tmux $(PATH_TO_USER_HOME)/.tmux; \
+		ln -sf $(PATH_TO_USER_HOME)/.tmux/.tmux.conf $(PATH_TO_USER_HOME)/.tmux.conf; \
+		ln -sf $(PWD)/.tmux.conf.local $(PATH_TO_USER_HOME)/.tmux.conf.local; \
+	else \
+		echo "Please clone down the .tmux submodule"; \
 	fi
 
 .PHONY: remove-check
